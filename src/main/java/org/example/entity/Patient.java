@@ -6,19 +6,24 @@ import java.util.List;
 
 public class Patient extends Person {
 
-    private  List<Doctor> doctors;
-    private  List<Prescription> prescriptions;
+    private List<Doctor> doctors;
+    private String selfExpression;
+    private List<Prescription> prescriptions;
     private double totalPayed;
     private double amount;
+
+    private boolean isAccepted;
 
     public Patient() {
     }
 
-    public Patient(List<Doctor> doctors, List<Prescription> prescriptions, double totalPayed, double amount) {
+    public Patient(List<Doctor> doctors, String selfExpression, List<Prescription> prescriptions, double totalPayed, double amount, boolean isAccepted) {
         this.doctors = doctors;
+        this.selfExpression = selfExpression;
         this.prescriptions = prescriptions;
         this.totalPayed = totalPayed;
         this.amount = amount;
+        this.isAccepted = isAccepted;
     }
 
     public List<Doctor> getDoctors() {
@@ -27,6 +32,14 @@ public class Patient extends Person {
 
     public void setDoctors(List<Doctor> doctors) {
         this.doctors = doctors;
+    }
+
+    public String getSelfExpression() {
+        return selfExpression;
+    }
+
+    public void setSelfExpression(String selfExpression) {
+        this.selfExpression = selfExpression;
     }
 
     public List<Prescription> getPrescriptions() {
@@ -53,13 +66,23 @@ public class Patient extends Person {
         this.amount = amount;
     }
 
+    public boolean isAccepted() {
+        return isAccepted;
+    }
+
+    public void setAccepted(boolean accepted) {
+        isAccepted = accepted;
+    }
+
     @Override
     public String toString() {
         return "Patient{" +
                 "doctors=" + doctors +
+                ", selfExpression='" + selfExpression + '\'' +
                 ", prescriptions=" + prescriptions +
                 ", totalPayed=" + totalPayed +
                 ", amount=" + amount +
+                ", isAccepted=" + isAccepted +
                 '}';
     }
 }
