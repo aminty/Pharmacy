@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface BaseRepository<R extends BaseEntity<ID> , ID> {
 
+    void createTable();
+
     R findById(ID id);
 
     R save(R r);
@@ -15,6 +17,8 @@ public interface BaseRepository<R extends BaseEntity<ID> , ID> {
     List<R> findAll();
 
     R update(R r);
+
+
 
 
 }
