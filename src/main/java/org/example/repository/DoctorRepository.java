@@ -15,4 +15,7 @@ public interface DoctorRepository extends BaseRepository<Doctor,Long> {
     double getAllIncomeById(long id );
 
 
+
+
+
 }
